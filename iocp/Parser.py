@@ -44,11 +44,9 @@ import six.moves.configparser as ConfigParser
 from six import StringIO
 
 # Import optional third-party libraries
-IMPORTS = []
 
 try:
     from PyPDF2 import PdfFileReader
-    IMPORTS.append('pypdf2')
 except ImportError:
     pass
 
@@ -58,24 +56,20 @@ try:
     from pdfminer.converter import TextConverter
     from pdfminer.pdfinterp import PDFPageInterpreter
     from pdfminer.layout import LAParams
-    IMPORTS.append('pdfminer')
 except ImportError:
     pass
 
 try:
     from bs4 import BeautifulSoup
-    IMPORTS.append('beautifulsoup')
 except ImportError:
     pass
 
 try:
     import requests
-    IMPORTS.append('requests')
 except ImportError:
     pass
 try:
     import docx2txt
-    IMPORTS.append('docx2txt')
 except ImportError:
     pass
 
@@ -127,11 +121,11 @@ class Parser(object):
     def __init_library(self, library, input_format):
         self.library = library
 
-        if input_format in ('pdf', ) and library not in IMPORTS:
+        if input_format in ('pdf', ) and library not in sys.modules:
             print('PDF parser library not found: {}'.format(library))
             sys.exit(-1)
 
-        if input_format in ('html', ) and 'beautifulsoup' not in IMPORTS:
+        if input_format in ('html', ) and 'beautifulsoup' not in sys.modules:
             print('HTML parser library not found: BeautifulSoup')
             sys.exit(-1)
 
@@ -304,7 +298,7 @@ class Parser(object):
     def parse(self, path):
         try:
             if path.startswith('http://') or path.startswith('https://'):
-                if 'requests' not in IMPORTS:
+                if 'requests' not in sys.modules:
                     e = 'HTTP library not found: requests'
                     raise ImportError(e)
 
