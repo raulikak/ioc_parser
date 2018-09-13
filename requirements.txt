@@ -4,3 +4,4 @@ PyPDF2>=1.26.0
 requests>=2.10.0
 six>=1.10.0
 lxml>=3.8.0
+docx2txt>=0.6
