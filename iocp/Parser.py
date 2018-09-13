@@ -143,7 +143,10 @@ class Parser(object):
                 continue
 
             if ind_pattern:
-                ind_regex = re.compile(ind_pattern, flags = re.IGNORECASE)
+                if ind_type == 'URL':
+                    ind_regex = re.compile(ind_pattern, re.IGNORECASE|re.MULTILINE|re.DOTALL)
+                else:
+                    ind_regex = re.compile(ind_pattern)
                 self.patterns[ind_type] = ind_regex
 
             try:
