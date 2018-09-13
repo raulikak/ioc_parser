@@ -13,6 +13,10 @@ IOC Parser is a tool to extract indicators of compromise from security reports i
 ## Installation
 **pip install ioc_parser**
 
+## Dependencies
+
+* [docx2txt](http://docx2txt.sourceforge.net/)
+
 ## Requirements
 One of the following PDF parsing libraries:
 * [PyPDF2](https://github.com/mstamy2/PyPDF2) - *pip install pypdf2*
@@ -23,3 +27,11 @@ For HTML parsing support:
 
 For HTTP(S) support:
 * [requests](http://docs.python-requests.org/en/latest/) - *pip install requests*
+
+## Merged changes from forks:
+
+[@buffer](https://github.com/buffer/ioc_parser/)
+
+[@dadokkio](https://github.com/dadokkio/ioc_parser/)
+
+[@LDO-CERT](https://github.com/LDO-CERT/ioc_parser/)
