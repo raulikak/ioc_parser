@@ -45,9 +45,9 @@ from six import StringIO
 import csv
 
 try:
-    import configparser as ConfigParser
-except ImportError:
     import configparser
+except ImportError:
+    import configparser as ConfigParser
 
 # Import optional third-party libraries
 try:
@@ -126,11 +126,6 @@ class Parser(object):
 
     def __init_dedup(self, dedup):
         self.dedup = dedup
-
-        if output_handler:
-            self.handler = output_handler
-        else:
-            self.handler = output.getHandler(output_format)
 
         if dedup:
             self.dedup_store = set()
