@@ -2,6 +2,7 @@ The MIT License (MIT)
 
 Original work: Copyright (c) 2015 armbues
 Additional work: (c) Copyright 2016 Hewlett Packard Enterprise Development LP
+Additional work: (c) Copyright 2018 @SteveClement from Team CIRCL
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
