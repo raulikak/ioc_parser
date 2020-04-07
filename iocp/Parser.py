@@ -149,7 +149,7 @@ class Parser(object):
             print(('PDF parser library not found: {}'.format(library)))
             sys.exit(-1)
 
-        if input_format in ('html', ) and 'beautifulsoup' not in sys.modules:
+        if input_format in ('html', ) and 'bs4' not in sys.modules:
             print('HTML parser library not found: BeautifulSoup')
             sys.exit(-1)
 
